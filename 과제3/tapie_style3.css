@@ -1,0 +1,302 @@
+/* --- 기본 초기화 --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #ffffff; /* 인스타 배경색 */
+  display: flex; /* 왼쪽 사이드바 고정을 위해 body를 flex로 */
+}
+
+/* --- [전체 레이아웃] --- */
+.insta-layout {
+  display: flex;
+  width: 100%;
+}
+
+/* --- [1. 왼쪽 세로 메뉴바] --- */
+.sidebar {
+  width: 72px;
+  height: 100vh;
+  background-color: white;
+  border-right: 1px solid #dbdbdb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0; 
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
+}
+
+.logo-container {
+  margin-bottom: 25px; /* 로고와 첫 아이콘 사이 간격 */
+  flex-shrink: 0;
+}
+
+.sidebar-logo {
+  width: 35px;
+  height: auto;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.sidebar-logo:hover{
+  background-color: #f2f2f2;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px; /* 아이콘들 사이의 일정한 간격 */
+  flex-grow: 1; /* 이 영역이 남는 공간을 차지해서 하단 아이콘을 밀어냄 */
+  width: 100%;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px; /* 클릭 영역 확보 */
+  height: 44px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.nav-item:hover {
+  background-color: #f2f2f2;
+}
+
+.nav-item img, .more-container img {
+  width: 24px; 
+  height: 24px;
+  object-fit: contain;
+}
+
+
+/* 프로필 미니 사진 동그랗게 */
+.mini-profile-pic {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* --- [2. 가운데 메인 영역 + 3. 오른쪽 사이드바] --- */
+.content-wrapper {
+  margin-left: 72px; /* 사이드바 너비만큼 왼쪽 비우기 */
+  display: flex;
+  justify-content: space-between; 
+  padding: 20px 40px; /* 양옆에 약간의 여유 패딩 */
+  width: calc(100% - 72px);
+  box-sizing: border-box;
+}
+
+/* --- [2. 가운데 메인 피드 영역] --- */
+.main-feed {
+  width: 600px; 
+  flex-grow: 0; /* 남는 공간을 어느 정도 차지하게 함 */
+  max-width: 830px; /* 너무 커지지 않게 제한 */
+  margin: 0 auto; /* 가운데 정렬 */
+}
+
+/* [상단 스토리 바] */
+.story-bar {
+  width: 100%; /* 부모인 .main-feed 너비에 맞춤 */
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 16px 0;
+  background: none; /* 배경 흰색 상자 제거 (선택 사항) */
+  margin-bottom: 20px;
+
+  overflow-x: auto;
+  scrollbar-width: none; /* 스크롤바 숨기기 */
+  -ms-overflow-style: none;
+}
+
+.story-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 74px;
+}
+
+.story-ring {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  padding: 2px; /* 링과 사진 사이 간격 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 스토리 테두리 그라데이션 (캡처본에 맞춰 조정 가능) */
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+}
+
+/* 읽은 스토리는 회색 테두리로 (옵션) */
+.story-ring:not(.active) {
+  background: #dbdbdb;
+}
+
+.story-ring img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid white; /* 그라데이션 위에 흰색 테두리 */
+  object-fit: cover;
+}
+
+.story-username {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #262626;
+  text-align: center;
+}
+
+/* [메인 게시물 피드] -> 이미지를 꽉 차게 */
+.post-image-container {
+  width: 100%;
+}
+
+.full-post-image {
+  width: 100%;
+}
+
+/* --- [3. 오른쪽 내 프로필 및 추천 영역] --- */
+.right-sidebar {
+  width: 320px;
+  flex-shrink: 0; /* 크기가 줄어들지 않게 고정 */
+}
+
+/* 공통: flexbox 배치 */
+.my-profile, .suggestion-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.my-profile-pic, .suggest-pic {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.my-profile-pic {
+  width: 56px;
+  height: 56px;
+  margin-right: 16px;
+}
+
+.suggest-pic {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+}
+
+.profile-text, .suggest-text {
+  flex-grow: 1; /* 글씨가 남은 공간 차지 */
+  display: flex;
+  flex-direction: column;
+}
+
+.userid {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.username, .reason {
+  color: #8e8e8e;
+  font-size: 14px;
+}
+
+.action-btn {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0095f6; /* 파란색 버튼 */
+}
+
+/* 추천 섹션 헤더 */
+.suggestions-header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.suggestions-header span {
+  color: #8e8e8e;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.see-all {
+  text-decoration: none;
+  color: #262626;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* 우측 하단 푸터 */
+.side-footer p {
+  font-size: 12px;
+  color: #c7c7c7;
+  margin-bottom: 8px;
+}
+
+/* --- [오른쪽 하단 플로팅 메시지 버튼] --- */
+.floating-message {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: white;
+  border-radius: 30px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+}
+
+.float-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.floating-message span {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.message-count {
+  background-color: #ed4956;
+  color: white;
+  font-size: 11px;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.more-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* 하단 아이콘들끼리도 촘촘하게 */
+  gap: 12px; 
+  margin-top: auto; 
+  flex-shrink: 0;
+}

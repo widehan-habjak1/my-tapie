@@ -1,15 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram Clone</title>
+  <meta charset="UTF-8">
+  <title>나의 Instagram 페이지 과제</title>
+  <link rel="stylesheet" href="tapie_style3.css">
 </head>
 <body>
-    <header id="stories">
-        <div class="story-box">
-            
+
+  <div class="insta-layout">
+    <nav class="sidebar">
+      <div class="logo-container">
+        <img src="ig_logo.png" alt="logo" class="sidebar-logo">
+      </div>
+
+      <div class="nav-links">
+        <a href="#" class="nav-item"><img src="ig_home.png" alt="홈"></a>
+        <a href="#" class="nav-item"><img src="ig_search.png" alt="검색"></a>
+        <a href="#" class="nav-item"><img src="ig_reels.png" alt="릴스"></a>
+        <a href="#" class="nav-item"><img src="ig_notification.png" alt="메시지"></a>
+        <a href="#" class="nav-item"><img src="ig_explore.png" alt="탐색 탭"></a>
+        <a href="#" class="nav-item"><img src="ig_heart.png" alt="알림"></a>
+        <a href="#" class="nav-item"><img src="ig_create1.png" alt="만들기"></a>
+        <a href="#" class="nav-item"><img src="ig_profileleft.png" alt="프로필" class="mini-profile-pic"></a>
+      </div>
+
+      <div class="more-container">
+        <a href="#" class="nav-item"><img src="ig_menu.png" alt="더 보기"></a>
+        <a href="#" class="nav-item"><img src="ig_metaapss.png" alt="Meta의 다른 앱"></a>
+      </div>
+
+    </nav>
+
+    <main class="content-wrapper">
+      
+      <section class="main-feed">
+        
+        <div class="story-bar">
+          <div class="story-item">
+            <div class="story-ring active"><img src="ig_profilestory.png" alt="user1"></div>
+            <span class="story-username">sah.ruulll</span>
+          </div>
+          <div class="story-item">
+            <div class="story-ring active"><img src="ig_profilestory.png" alt="user2"></div>
+            <span class="story-username">faaz_lur</span>
+          </div>
+          <div class="story-item">
+            <div class="story-ring"><img src="ig_profilestory.png" alt="user3"></div>
+            <span class="story-username">txwl.s</span>
+          </div>
+          <div class="story-item">
+            <div class="story-ring"><img src="ig_profilestory.png" alt="user3"></div>
+            <span class="story-username">cx.hs_10</span>
+          </div>
+          <div class="story-item">
+            <div class="story-ring active"><img src="ig_profilestory.png" alt="user3"></div>
+            <span class="story-username">sunrin_10</span>
+          </div>
+          <div class="story-item">
+            <div class="story-ring"><img src="ig_profilestory.png" alt="user3"></div>
+            <span class="story-username">sunrin_10</span>
+          </div>
+          <div class="story-item">
+            <div class="story-ring"><img src="ig_profilestory.png" alt="user3"></div>
+            <span class="story-username">sunrin_10</span>
+          </div>
+          <div class="story-item">
+            <div class="story-ring active"><img src="ig_profilestory.png" alt="user3"></div>
+            <span class="story-username">sunrin_10</span>
+          </div>
+          <div class="story-item">
+            <div class="story-ring"><img src="ig_profilestory.png" alt="user3"></div>
+            <span class="story-username">sunrin_10</span>
+          </div>
+          <div class="story-item">
+            <div class="story-ring"><img src="ig_profilestory.png" alt="user3"></div>
+            <span class="story-username">sunrin_10</span>
+          </div>
+          <div class="story-item">
+            <div class="story-ring"><img src="ig_profilestory.png" alt="user3"></div>
+            <span class="story-username">sunrin_10</span>
+          </div>
+          <div class="story-item">
+            <div class="story-ring"><img src="ig_profilestory.png" alt="user3"></div>
+            <span class="story-username active">sunrin_10</span>
+          </div>
+          <div class="story-item">
+            <div class="story-ring"><img src="ig_profilestory.png" alt="user3"></div>
+            <span class="story-username">sunrin_10</span>
+          </div>
+          </div>
+
+        <article class="post-image-container">
+          <img src="post1.png" alt="MOU 계약 체결 게시물" class="full-post-image">
+        </article>
+        <article class="post-image-container">
+          <img src="post2.png" alt="KOMI-Fest" class="full-post-image">
+        </article>
+        <article class="post-image-container">
+          <img src="post3.png" alt="KOMI-Fest" class="full-post-image">
+        </article>
+        <article class="post-image-container">
+          <img src="post4.png" alt="KOMI-Fest" class="full-post-image">
+        </article>
+      </section>
+
+      <aside class="right-sidebar">
+        <div class="my-profile">
+          <img src="ig_profileright.png" alt="내 프로필" class="my-profile-pic">
+          <div class="profile-text">
+            <span class="userid">hxl.608</span>
+            <span class="username">Halim</span>
+          </div>
+          <a href="#" class="action-btn">전환</a>
         </div>
-    </header>
+
+        <div class="suggestions-header">
+          <span>회원님을 위한 추천</span>
+          <a href="#" class="see-all">모두 보기</a>
+        </div>
+
+        <div class="suggestions-list">
+          <div class="suggestion-item">
+            <img src="ig_rec1.png" alt="추천1" class="suggest-pic">
+            <div class="suggest-text">
+              <span class="userid">홍민기</span>
+              <span class="reason">회원님을 위한 추천</span>
+            </div>
+            <a href="#" class="action-btn follow">팔로우</a>
+          </div>
+          <div class="suggestion-item">
+            <img src="ig_rec2.png" alt="추천2" class="suggest-pic">
+            <div class="suggest-text">
+              <span class="userid">WonCare 원케어</span>
+              <span class="reason">회원님을 위한 추천</span>
+            </div>
+            <a href="#" class="action-btn follow">팔로우</a>
+          </div>
+          <div class="suggestion-item">
+            <img src="ig_rec3.png" alt="추천3" class="suggest-pic">
+            <div class="suggest-text">
+              <span class="userid">신광준</span>
+              <span class="reason">회원님을 위한 추천</span>
+            </div>
+            <a href="#" class="action-btn follow">팔로우</a>
+          </div>
+          <div class="suggestion-item">
+            <img src="ig_rec4.png" alt="추천4" class="suggest-pic">
+            <div class="suggest-text">
+              <span class="userid">이승재</span>
+              <span class="reason">회원님을 위한 추천</span>
+            </div>
+            <a href="#" class="action-btn follow">팔로우</a>
+          </div>
+          <div class="suggestion-item">
+            <img src="ig_rec5.png" alt="추천5" class="suggest-pic">
+            <div class="suggest-text">
+              <span class="userid">하진</span>
+              <span class="reason">회원님을 위한 추천</span>
+            </div>
+            <a href="#" class="action-btn follow">팔로우</a>
+          </div>
+          </div>
+
+        <footer class="side-footer">
+          <p>소개 · 도움말 · 홍보 센터 · API · 채용 정보 · 개인정보처리방침 · 약관 · 위치 · 언어 · Meta Verified</p>
+          <p>© 2026 INSTAGRAM FROM META</p>
+        </footer>
+      </aside>
+
+    </main>
+
+  </div>
+
+  <div class="floating-message">
+    <img src="ig_heart.png" alt="메시지 아이콘" class="float-icon">
+    <span>메시지</span>
+    <img src="ig_messageprofile.png" alt="" class="message-icon">
+  </div>
+
 </body>
 </html>
